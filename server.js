@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const { v4: uuidv4 } = require("uuid");
 const server = require("http").Server(app);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(express.static("public"));
 const io = require("socket.io")(server);
 const { ExpressPeerServer } = require("peer");
